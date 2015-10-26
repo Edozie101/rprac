@@ -82,8 +82,6 @@ however because I chose to make a set only store one key and value pair, I can s
 I had decided to allow multiple for each key by simply appending, I would have also made delete slower because, I would have needed to go through every slot on delete just incase it had a key/value par that matched.
 
 
-
-
 bucket = get_bucket(aDict.key)
 (0...bucket_length).each do |i|
   k, v = bucket[i]
