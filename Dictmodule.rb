@@ -9,6 +9,12 @@ module Dict
 	# Get this Bucket from the aDict array of buckets and find the
 	# slot that contains the key (hashed number) we want.
 
+	# In the case of set we do this, to replace duplicate keys.
+	# We use the get bucket function to find the bucket id of the key we want
+	#  which would be the same as the duplicate key, beacuse the "key".hash % aDict.length
+	# would give the same value
+
+
 
 	def Dict.new(num_buckets=256)
 		#initializes a Dict with the given number of buckets
@@ -43,9 +49,12 @@ module Dict
 			k, v = kv
 				if key == k
 					return i, k, v
+					puts "i is #{i}}, k is #{k}, v is #{v}"
 				end
 		end
+
 		return -1, key, default
+
 	end
 
 
