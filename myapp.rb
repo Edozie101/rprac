@@ -1,3 +1,4 @@
+require 'stream'
 require 'rack'
 require 'rack/static'
 

@@ -1,8 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    stream (0.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  stream
