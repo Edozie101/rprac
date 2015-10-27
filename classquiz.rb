@@ -3,7 +3,7 @@ require 'open-uri'
 WORD_URL = "http://learncodethehardway.org/words.txt"
 WORDS = []
 
-#phrases are set of Regex ready  questions keys and answers value
+#phrases are set of REGEX READY  questions keys and answers value
 #for class inheritance , Intialization into a variable , class functions, Class initialzation function,
 
 PHRASES = {
@@ -32,6 +32,8 @@ open(WORD_URL) {|f|
 #make names or class names using random words, the snippet of the phrase
 # and the pattern in the snippet that you want to replace
 def craft_names(rand_words, snippet, pattern, caps=false)
+  # SCAN takes out the number of regex occurences in a string and puts them into an array
+  # eg "hello ***  my name is $$$ , *** are you English ?".scan(/***/) returns -> ["***","***"]
   names = snippet.scan(pattern).map do
     word = rand_words.pop()
     caps ? word.capitalize : word
