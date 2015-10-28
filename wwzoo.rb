@@ -37,7 +37,7 @@ end
 
 #Fish is an Animal
 
-class Fish
+class Fish < Animal
 end
 
 #Salmon is a fish
