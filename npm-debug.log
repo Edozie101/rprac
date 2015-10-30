@@ -1,0 +1,216 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'deployd', '-g' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose cache add [ 'deployd', null ]
+5 verbose cache add name=undefined spec="deployd" args=["deployd",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'deployd',
+6 verbose parsed url   path: 'deployd',
+6 verbose parsed url   href: 'deployd' }
+7 silly lockFile 40480fc9-deployd deployd
+8 verbose lock deployd /Users/edzye101/.npm/40480fc9-deployd.lock
+9 silly lockFile 40480fc9-deployd deployd
+10 silly lockFile 40480fc9-deployd deployd
+11 verbose addNamed [ 'deployd', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile a0ffc02f-deployd deployd@
+14 verbose lock deployd@ /Users/edzye101/.npm/a0ffc02f-deployd.lock
+15 silly addNameRange { name: 'deployd', range: '*', hasData: false }
+16 verbose request where is /deployd
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id eb9e6bf5b8bc3598
+19 verbose url raw /deployd
+20 verbose url resolving [ 'https://registry.npmjs.org/', './deployd' ]
+21 verbose url resolved https://registry.npmjs.org/deployd
+22 verbose request where is https://registry.npmjs.org/deployd
+23 info trying registry request attempt 1 at 23:30:17
+24 http GET https://registry.npmjs.org/deployd
+25 http 200 https://registry.npmjs.org/deployd
+26 silly registry.get cb [ 200,
+26 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"8W68OPDJWBLCZRIDFHYOHV7A6"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '54715',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     date: 'Thu, 29 Oct 2015 23:30:16 GMT',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     connection: 'keep-alive',
+26 silly registry.get     'x-served-by': 'cache-lhr6327-LHR',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1446161415.722931,VS0,VE579',
+26 silly registry.get     vary: 'Accept' } ]
+27 silly addNameRange number 2 { name: 'deployd', range: '*', hasData: true }
+28 silly addNameRange versions [ 'deployd',
+28 silly addNameRange   [ '0.3.0-alpha.1',
+28 silly addNameRange     '0.3.1',
+28 silly addNameRange     '0.3.2',
+28 silly addNameRange     '0.3.3',
+28 silly addNameRange     '0.3.4',
+28 silly addNameRange     '0.3.5',
+28 silly addNameRange     '0.3.6',
+28 silly addNameRange     '0.3.7',
+28 silly addNameRange     '0.3.8',
+28 silly addNameRange     '0.3.9',
+28 silly addNameRange     '0.3.10',
+28 silly addNameRange     '0.3.11',
+28 silly addNameRange     '0.3.12',
+28 silly addNameRange     '0.3.13',
+28 silly addNameRange     '0.3.14',
+28 silly addNameRange     '0.3.15',
+28 silly addNameRange     '0.4.0',
+28 silly addNameRange     '0.4.1',
+28 silly addNameRange     '0.4.2',
+28 silly addNameRange     '0.4.3',
+28 silly addNameRange     '0.4.4',
+28 silly addNameRange     '0.4.5',
+28 silly addNameRange     '0.4.6',
+28 silly addNameRange     '0.4.8',
+28 silly addNameRange     '0.5.0',
+28 silly addNameRange     '0.5.1',
+28 silly addNameRange     '0.6.0',
+28 silly addNameRange     '0.6.1',
+28 silly addNameRange     '0.6.2',
+28 silly addNameRange     '0.6.3',
+28 silly addNameRange     '0.6.4',
+28 silly addNameRange     '0.6.5',
+28 silly addNameRange     '0.6.6',
+28 silly addNameRange     '0.6.7',
+28 silly addNameRange     '0.6.8',
+28 silly addNameRange     '0.6.9',
+28 silly addNameRange     '0.6.10',
+28 silly addNameRange     '0.7.0',
+28 silly addNameRange     '0.8.0',
+28 silly addNameRange     '0.8.1',
+28 silly addNameRange     '0.8.2',
+28 silly addNameRange     '0.8.3',
+28 silly addNameRange     '0.8.4',
+28 silly addNameRange     '0.8.5',
+28 silly addNameRange     '0.8.6' ] ]
+29 verbose addNamed [ 'deployd', '0.8.6' ]
+30 verbose addNamed [ '0.8.6', '0.8.6' ]
+31 silly lockFile 81720340-deployd-0-8-6 deployd@0.8.6
+32 verbose lock deployd@0.8.6 /Users/edzye101/.npm/81720340-deployd-0-8-6.lock
+33 silly lockFile a301bfa0-js-org-deployd-deployd-0-8-6-tgz https://registry.npmjs.org/deployd/-/deployd-0.8.6.tgz
+34 verbose lock https://registry.npmjs.org/deployd/-/deployd-0.8.6.tgz /Users/edzye101/.npm/a301bfa0-js-org-deployd-deployd-0-8-6-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/deployd/-/deployd-0.8.6.tgz',
+35 verbose addRemoteTarball   '2e5838696f233c3bfdaf4b155d63386f45be36ef' ]
+36 info retry fetch attempt 1 at 23:30:19
+37 verbose fetch to= /var/folders/q6/hvxbm7b56r3f36fcl6zvgf9m0000gn/T/npm-92164-MFbV68Ir/registry.npmjs.org/deployd/-/deployd-0.8.6.tgz
+38 http GET https://registry.npmjs.org/deployd/-/deployd-0.8.6.tgz
+39 http 200 https://registry.npmjs.org/deployd/-/deployd-0.8.6.tgz
+40 silly lockFile a301bfa0-js-org-deployd-deployd-0-8-6-tgz https://registry.npmjs.org/deployd/-/deployd-0.8.6.tgz
+41 silly lockFile a301bfa0-js-org-deployd-deployd-0-8-6-tgz https://registry.npmjs.org/deployd/-/deployd-0.8.6.tgz
+42 silly lockFile 81720340-deployd-0-8-6 deployd@0.8.6
+43 silly lockFile 81720340-deployd-0-8-6 deployd@0.8.6
+44 silly lockFile a0ffc02f-deployd deployd@
+45 silly lockFile a0ffc02f-deployd deployd@
+46 silly resolved [ { author: { name: 'Ritchie Martori' },
+46 silly resolved     name: 'deployd',
+46 silly resolved     version: '0.8.6',
+46 silly resolved     license: 'Apache-2.0',
+46 silly resolved     description: 'the simplest way to build realtime APIs for web and mobile apps',
+46 silly resolved     repository: { url: 'git://github.com/deployd/deployd.git' },
+46 silly resolved     engines: { node: '>= 0.10.0' },
+46 silly resolved     main: 'index',
+46 silly resolved     dependencies:
+46 silly resolved      { async: '^0.9.0',
+46 silly resolved        bluebird: '^2.9.26',
+46 silly resolved        commander: '^2.2.0',
+46 silly resolved        cookies: '^0.5.0',
+46 silly resolved        corser: '^2.0.0',
+46 silly resolved        debug: '^2.1.0',
+46 silly resolved        doh: '^0.0.4',
+46 silly resolved        ejs: '^2.3.1',
+46 silly resolved        filed: '^0.1.0',
+46 silly resolved        mkdirp: '*',
+46 silly resolved        mongodb: '^2.0.39',
+46 silly resolved        opener: '^1.4.0',
+46 silly resolved        qs: '^5.2.0',
+46 silly resolved        request: '2.55.0',
+46 silly resolved        scrubber: '*',
+46 silly resolved        semver: '^4.3.3',
+46 silly resolved        send: '^0.12.2',
+46 silly resolved        shelljs: '^0.5.3',
+46 silly resolved        'socket.io': '^1.3.6',
+46 silly resolved        step: '^0.0.5',
+46 silly resolved        underscore: '^1.7.0',
+46 silly resolved        validation: '*',
+46 silly resolved        wrench: '^1.5.8' },
+46 silly resolved     devDependencies:
+46 silly resolved      { chai: '*',
+46 silly resolved        grunt: '^0.4.1',
+46 silly resolved        'grunt-contrib-jshint': '^0.11.3',
+46 silly resolved        'grunt-contrib-less': '^0.12.0',
+46 silly resolved        less: '*',
+46 silly resolved        mocha: '*',
+46 silly resolved        rewire: '~2.1.3',
+46 silly resolved        sinon: '~1.17.1',
+46 silly resolved        'mocha-phantomjs': '^3.5.3',
+46 silly resolved        'mocha-jshint': '0.0.9' },
+46 silly resolved     bin: { dpd: './bin/dpd' },
+46 silly resolved     scripts: { test: 'mocha --timeout 5000 && cd test-app && node runtests.js' },
+46 silly resolved     gitHead: '4968c5f15f20a677d47b3c5c9476faec1f67c2ca',
+46 silly resolved     bugs: { url: 'https://github.com/deployd/deployd/issues' },
+46 silly resolved     homepage: 'https://github.com/deployd/deployd#readme',
+46 silly resolved     _id: 'deployd@0.8.6',
+46 silly resolved     _shasum: '2e5838696f233c3bfdaf4b155d63386f45be36ef',
+46 silly resolved     _from: 'deployd@',
+46 silly resolved     _npmVersion: '2.14.4',
+46 silly resolved     _nodeVersion: '4.1.1',
+46 silly resolved     _npmUser: { name: 'nicolasrtt', email: 'nicolas@ritouet.com' },
+46 silly resolved     dist:
+46 silly resolved      { shasum: '2e5838696f233c3bfdaf4b155d63386f45be36ef',
+46 silly resolved        tarball: 'http://registry.npmjs.org/deployd/-/deployd-0.8.6.tgz' },
+46 silly resolved     maintainers: [ [Object], [Object], [Object] ],
+46 silly resolved     directories: {},
+46 silly resolved     _resolved: 'https://registry.npmjs.org/deployd/-/deployd-0.8.6.tgz' } ]
+47 info install deployd@0.8.6 into /usr/local/lib
+48 info installOne deployd@0.8.6
+49 verbose lib/node_modules/deployd unbuild
+50 verbose tar unpack /Users/edzye101/.npm/deployd/0.8.6/package.tgz
+51 silly lockFile 6085086b-r-local-lib-node-modules-deployd tar:///usr/local/lib/node_modules/deployd
+52 verbose lock tar:///usr/local/lib/node_modules/deployd /Users/edzye101/.npm/6085086b-r-local-lib-node-modules-deployd.lock
+53 silly lockFile 7670da9e-01-npm-deployd-0-8-6-package-tgz tar:///Users/edzye101/.npm/deployd/0.8.6/package.tgz
+54 verbose lock tar:///Users/edzye101/.npm/deployd/0.8.6/package.tgz /Users/edzye101/.npm/7670da9e-01-npm-deployd-0-8-6-package-tgz.lock
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/deployd'
+56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/deployd']
+56 error   errno: 3,
+56 error   code: 'EACCES',
+56 error   path: '/usr/local/lib/node_modules/deployd',
+56 error   fstream_type: 'Directory',
+56 error   fstream_path: '/usr/local/lib/node_modules/deployd',
+56 error   fstream_class: 'DirWriter',
+56 error   fstream_stack:
+56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+56 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+56 error      'Object.oncomplete (fs.js:107:15)' ] }
+57 error Please try running this command again as root/Administrator.
+58 error System Darwin 13.4.0
+59 error command "node" "/usr/local/bin/npm" "install" "deployd" "-g"
+60 error cwd /Users/edzye101/rprac
+61 error node -v v0.10.33
+62 error npm -v 1.4.28
+63 error path /usr/local/lib/node_modules/deployd
+64 error fstream_path /usr/local/lib/node_modules/deployd
+65 error fstream_type Directory
+66 error fstream_class DirWriter
+67 error code EACCES
+68 error errno 3
+69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/deployd'
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+70 error fstream_stack Object.oncomplete (fs.js:107:15)
+71 verbose exit [ 3, true ]
