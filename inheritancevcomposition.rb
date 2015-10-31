@@ -79,3 +79,19 @@ class Other
   end
 
 end
+class Mild
+  def initialize
+    @other = Other.new
+  end
+  def implicit
+    @other.implicit
+  end
+  def overrided
+    puts "Child overrided"
+  end
+  def altered
+    puts "Before Child Altered "
+    @other.altered
+    puts "After "
+
+end
