@@ -57,6 +57,7 @@ class Map
   "Laser_Weapon_Armory" => Laser_Weapon_Armory.new,
   "The_Bridge" => The_Bridge.new(),
   "Escape_Pod" => Escape_Pod.new(),
+  "Bonus_Room" => Bonus_Room.new(),
   "Finished" => Finished.new()}
 
 
