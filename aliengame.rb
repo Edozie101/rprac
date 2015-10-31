@@ -30,12 +30,17 @@ def speech(words)
   puts words
   system("say", words)
 end
-
 def speak(words)
   chars = words.chars
   chars.each do |word|
     print word
     sleep(0.05)
+  end
+end
+def pause
+  (0..3).each do |a|
+    print "..."
+    sleep(1)
   end
 end
 

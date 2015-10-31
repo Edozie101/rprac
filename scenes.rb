@@ -10,10 +10,13 @@ class Scene
 
   end
   def scoring(num)
-    ewords = ["horray", "yippie","I am so happy for you", "Yay, children in africa are saved now", "Wooo", "OMG", "Im a computer, but I feel like screaming fuck yes right now"]
+    ewords = ["horray", "yippie","I am so happy for you", "Yay, children in africa are saved now",
+      "Wooo", "OMG", "Im a computer, but I feel like screaming fuck yes right now",
+      "Did you know I just jizzed all over for you", "I think your mother would be proud",
+      "Wow, I don't believe it ", "Hmm well I think you are a pretty capable person now"]
     $score += num
-    random_word = ewords.at(rand(ewords.length - 1 ))
-    speech "\n\t\t\tYou just got #{num} points!\n \t\t\tYour current score is #{$score} points..\n\t\t\t#{random_word}"
+    random_word = ewords.at(rand(ewords.length  ))
+    speech "\n\t\t\t#{@@playername},You just got #{num} points!\n \t\t\tYour current score is #{$score} points..\n\t\t\t#{random_word}"
   end
   def rules()
     speech "PLAYER 1, please enter your name "
@@ -174,10 +177,50 @@ class Bonus_Room < Scene
 
         There are four doors, north, south, east, and west.
 
-        what do you choose 
+        what do you choose ?
+
+        say the direction alone
 
 
      """)
+
+     input = STDIN.gets.chomp
+
+     case input
+     when "north"
+        speech "So you want to go North huh?"
+        pause
+        scoring(rand(10))
+        return "The_Bridge"
+     when "south"
+        speech "Well well well, you are from the south side, hmm.."
+        pause
+        scoring(rand(20))
+        return "Laser_Weapon_Armory"
+     when "east"
+        pause
+        scoring(rand(10))
+        return "Central_Coridoor"
+     when "west"
+        pause
+        scoring(rand(10))
+        return "Bonus_Room"
+     when "stay put"
+        speech("Well done you...")
+        pause
+        scoring(1)
+     when "dig a hole under the ground"
+        speech("absolute genius, absolute fucking genius.")
+        pause
+        scoring(rand(1000000000))
+        return "Bonus_Room"
+     else
+       speech "I do not know what else to do, so you know what. Here you go"
+       pause
+       scoring (rand(1000))
+       return "Central_Coridoor"
+
+     end
 
 
   end
