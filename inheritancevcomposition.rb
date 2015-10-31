@@ -54,3 +54,28 @@ sleep(1)
 p.altered
 sleep(1)
 c.altered
+
+
+#Here we can see in two of these examples we have to redefine the childs
+# functions to avoid multiple inheritance issues
+
+class Other
+  def initialize
+  end
+
+  def implicit
+    puts "Other implicit"
+
+  end
+
+  def overrided
+    puts "Other overrided"
+
+  end
+
+  def altered
+    puts "Other altered"
+
+  end
+
+end
