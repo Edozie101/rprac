@@ -1,3 +1,4 @@
+require 'something.rb'
 class Parent
   attr_accessor(:height,:weight,:skin_color,:name)
   def initialize(name)
@@ -92,6 +93,22 @@ class Mild
   def altered
     puts "Before Child Altered "
     @other.altered
-    puts "After "
-
+    puts "After Child Altered "
+  end
 end
+
+# So within inheritance instead of the is_a? Relationship between Child and Parent
+# The child  has_a? Other to get the same work done
+
+
+
+m = Mild.new()
+sleep 1
+m.implicit
+sleep 1
+m.overrided
+sleep 1
+m.altered
+
+# Afterwards I can ask myself well if Other is a class can't I create a module within
+# Other.rb ? Yes you can
