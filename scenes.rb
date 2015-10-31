@@ -23,20 +23,17 @@ class Scene
     @@playername = STDIN.gets.chomp
     speech( "Welcome to eddys Alien Game, #{@@playername}.\n")
 
-    speech( "\nI dont have much time to explain but you are stranded on an alien ship you must get out somehow, someway.\n
+    speech( "\nI do not have much time to explain, but you are stranded on an alien ship you must get out somehow, someway.\n
     Move around the ship to find your way out \n but don\'t die you\'ll look like an idiot.\n")
 
     speech( "To move from place to place type in a direction like:\n\t
     north\tsouth\teast\t or west.\n simply say something like \'Head north and find me some chicken.. \'")
-    speech("\n If you see an object type the name of the object like \'pick up the damm GUN bitchhh!  \'  ")
+    speech("\n If you see an object type the name of the object like \'pick up the damm laser gun before zogons hoarde here!  \'  ")
     sleep(4)
     speech "\nGet ready to start"
     sleep(4)
   end
 end
-
-
-
 
 class Central_Coridoor < Scene
   def enter
@@ -101,7 +98,6 @@ class Central_Coridoor < Scene
   end
 end
 
-
 class Laser_Weapon_Armory < Scene
   def enter()
 
@@ -147,7 +143,6 @@ class The_Bridge < Scene
     return "Escape_Pod"
   end
 end
-
 
 class Escape_Pod < Scene
   def enter()
