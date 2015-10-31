@@ -1,4 +1,9 @@
 class Parent
+  attr_accessor(:height,:weight,:skin_color,:name)
+  def initialize(name)
+    @name = name
+    @skin_color = "Brown"
+  end
   def implicit
     puts "I am implicit Parent"
   end
@@ -13,6 +18,12 @@ class Parent
 end
 
 class Child < Parent
+  attr_accessor(:height,:weight,:skin_color,:name)
+  def initialize(name)
+    super(name)
+    @height = 183
+
+  end
 
   def overrided
     puts "I am an overrided Child"
@@ -26,9 +37,12 @@ class Child < Parent
 
 end
 
-p = Parent.new
-c = Child.new
+p = Parent.new("Edozie")
+c = Child.new("Jr")
 
+puts(p.inspect)
+sleep(1)
+puts(c.inspect)
 p.implicit
 sleep(1)
 c.implicit
