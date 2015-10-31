@@ -1,4 +1,3 @@
-require 'something.rb'
 class Parent
   attr_accessor(:height,:weight,:skin_color,:name)
   def initialize(name)
