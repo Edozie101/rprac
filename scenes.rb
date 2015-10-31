@@ -17,8 +17,8 @@ class Scene
   end
   def rules()
     speech "PLAYER 1, please enter your name "
-    input = STDIN.gets.chomp
-    speech( "Welcome to eddys Alien Game, #{input}.\n")
+    @@playername = STDIN.gets.chomp
+    speech( "Welcome to eddys Alien Game, #{@@playername}.\n")
 
     speech( "\nI dont have much time to explain but you are stranded on an alien ship you must get out somehow, someway.\n
     Move around the ship to find your way out \n but don\'t die you\'ll look like an idiot.\n")
@@ -164,6 +164,25 @@ class Death < Scene
     speech("\n\t#{@@deaths.at(rand(@@deaths.length - 1 ))}")
     exit(0)
   end
+end
+
+class Bonus_Room < Scene
+  def enter
+    speech("""
+      Welcome #{@@playername} to the bonus room. There are  many tales of travellers,
+      entering here and obtaining glorious wealth. Can you do that too?
+
+        There are four doors, north, south, east, and west.
+
+        what do you choose 
+
+
+     """)
+
+
+  end
+
+
 end
 
 class Finished < Scene
