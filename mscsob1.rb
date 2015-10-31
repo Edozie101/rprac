@@ -27,6 +27,10 @@ class Song
       sleep(1)
     end
   end
+  def speech
+    puts @lyrics
+    system("say", @lyrics.join(","))
+  end
 end
 
 good_lyrics =  ["It\'s been one week since you looked at me",
@@ -44,10 +48,10 @@ happy_bday = Song.new(["Happy birthday to you", "I don't want to get sued", "So 
 bulls_on_parade = Song.new(["They rally around tha family",  "With pockets full of shells"])
 
 
-happy_bday.sing
+happy_bday.speech
 puts "_" * 40
 puts "\n" * 3
-bulls_on_parade.sing
+bulls_on_parade.speech
 puts "_" * 40
 puts "\n" * 3
-one_week.sing
+one_week.speech
