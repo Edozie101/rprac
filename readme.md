@@ -43,6 +43,7 @@ bucket.each_with_index do |kv,i|
   if key == k
     return i, k, v
   end
+
 end
 return -1, key, default
 
@@ -98,7 +99,7 @@ The last functon just gets each bucket and goes through each slot in the bucket.
 aDict.each do |bucket|
   if bucket
     bucket.each {|k,v| puts k, v}
-    end
+    
   end
 end
 ........................................
