@@ -1,5 +1,5 @@
 #coding: utf-8
-lib = File.expand_path("../lib",__FILE__)
+lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   #description
   spec.description = %q{Longer description of your project.}
   #homepage
-  spec.homepage = http://gems.zegdev.com
+  spec.homepage = "http://gems.zegdev.com"
   #license
   spec.license = "MIT"
 
@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.files = ["lib/NAME.rb"]
   #executable binaries
   spec.executables = ["bin/NAME"]
-  #test files
+  #test filesat
   spec.test_files = ["tests/test_NAME.rb"]
   #require paths
   spec.require_paths = ["lib"]
