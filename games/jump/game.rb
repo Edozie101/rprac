@@ -56,7 +56,7 @@ class Asteroid
 
     else
       @x = 639
-      @y = rand(640)
+      @y = rand(480)
     end
   end
 
@@ -89,7 +89,7 @@ class Asteroid
   end
 
   def draw
-
+    
     @image.draw(@x,@y,Zorder::Stars, 0.7,0.7)
   end
 
@@ -223,7 +223,7 @@ class Window < Gosu::Window
       @player = Player.new
       @player.warp(320,240)
       #load tiles is the array of the animations
-      @star_anim = Gosu::Image::load_tiles("media/fireball.png",25,25)
+      @star_anim = Gosu::Image::load_tiles("media/star.png",25,25)
       @stars = Array.new
       @asteroids = []
       @font = Gosu::Font.new(20)
