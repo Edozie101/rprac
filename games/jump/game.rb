@@ -89,7 +89,7 @@ class Asteroid
   end
 
   def draw
-    
+
     @image.draw(@x,@y,Zorder::Stars, 0.7,0.7)
   end
 
@@ -215,6 +215,8 @@ class Player
 end
 
 class Window < Gosu::Window
+  attr_reader :background_image,:star_anim,:stars,:player
+
   def initialize
       super 640, 480
       self.caption = "Jump!"
