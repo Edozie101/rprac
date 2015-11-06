@@ -29,6 +29,21 @@ class TestGame < Test::Unit::TestCase
 
     end
 
+    def test_more_room_paths()
+      first = Room.new("First", "This room is the first room that you find
+       yourself in there is a room to the north and to the south ")
+       north = Room.new ("north", "This room seems like it is a place to store
+       dead bodies you feel a cold chill down the back of your spine")
+       south = Room.new ("south", "There is bountiful amounts of gold in these rooms")
+
+       first.add_paths({"north"=> north, "south" => south})
+      north.add_paths({"south" => first})
+      south.add_paths("north" => first)
+
+      assert_equal(first.go("north").go("south"), first)
+       
+    end
+
     def test_map()
         start = Room.new("Start", "You can go west and down a hole.")
         west = Room.new("Trees", "There are trees here, you can go east.")
