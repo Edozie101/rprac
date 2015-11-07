@@ -5,11 +5,23 @@ require "test/unit"
 
 class TestGame < Test::Unit::TestCase
 
+    def test_methods
+      puts "TEST BEGINS HERE"
+
+      aroom = Room.new("Inter-Pol", "This is where we do all of our connecting")
+      north = Room.new("north", "this is a north room")
+      aroom.add_paths({"north" => north })
+      assert_respond_to(aroom, :go)
+      assert_respond_to(aroom, :add_paths)
+      assert_respond_to(aroom, :paths)
+      assert_respond_to(aroom, :description)
+      assert_send([aroom, :go, "north"])
+
+
+    end
+
+
     def test_room()
-        puts "Hello World ! "
-        puts "I am really working "
-        puts Room.method_defined? :go
-        puts Room.new("a +b ", "b+c").inspect
         gold = Room.new("GoldRoom",
                     """This room has gold in it you can grab. There's a
                 door to the north.""")
