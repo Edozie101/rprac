@@ -11,7 +11,7 @@ class TestGame < Test::Unit::TestCase
     Lexicon.is_a? Module
   end
   def test_lexicon_has_array
-    assert_equal(Lexicon.scan("Go to the toilet"))
+    assert_equal(Lexicon.scan("go north"))
   end
   def test_room
     nuclear = Scene.new("NuclearShelter")
@@ -55,6 +55,7 @@ class TestGame < Test::Unit::TestCase
     puts "Im testing the map"
     current_scene = Map.new("The Vault").opening_scene
     assert_equal(current_scene, "TheInstitute")
+
   end
 
   def test_nulcear_entrance_print
