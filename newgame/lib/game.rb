@@ -13,8 +13,44 @@ def competerSpeak(words)
   computerWrite(words)
 end
 
+class Npc
+  attr_accessor :type, :name, :experience_value, :damage, :ranged
+  @@type_values = {
+    "rat" => ["rat",33, 5, 0],
+    "human_marauder" => ["human_marauder", 50,10,5]
+
+  }
+  def initialize(type)
+    @type = type
+    if @@type_values.has_key?(type)
+      @experience_value = @@type_values[type][1]
+      @damage = @@type_values[type][2]
+      @ranged = @@type_values[type][3]
+    end
+  end
+end
+
+class Monster < Npc
+    attr_accessor :type, :name, :experience_value, :damage, :ranged
+  def initialize(type)
+    super(type)
+  end
+
+
+
+  def attack(player)
+    puts "Starting attack"
+    puts player
+
+    puts "#{player.health}"
+
+    player.health -= @damage
+  end
+
+end
+
 class Player
-  attr_accessor :name,:strength,:perception,:endurance,:charisma,:intelligence, :agility, :luck, :level,:experience
+  attr_accessor :name,:health,:strength,:perception,:endurance,:charisma,:intelligence, :agility, :luck, :level,:experience
   def initialize(name)
     @name = name
     @strength = 0
@@ -26,6 +62,7 @@ class Player
     @luck = 0
     @level = 1
     @experience = 0
+    @health  = 100
   end
 
 
