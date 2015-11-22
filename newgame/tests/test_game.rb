@@ -11,10 +11,7 @@ class TestGame < Test::Unit::TestCase
     Lexicon.is_a? Module
   end
   def test_lexicon_has_array
-    assert_block do
-      Lexicon.scan("go north") == [["verb","go"],["direction","north"]]
-    end
-
+    assert_equal(Lexicon.scan("go north"),[["verb","go"],["direction","north"]])
   end
   def test_room
     nuclear = Scene.new("NuclearShelter")

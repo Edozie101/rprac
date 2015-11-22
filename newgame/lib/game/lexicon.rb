@@ -2,9 +2,10 @@ module Lexicon
   @allowed_words = {
   "direction" => ["north", "south","east","west"],
   "verb" => ["go", "kill", "eat", "pick up","shoot","fire"],
-  "nouns" => ["bear", "alien", "animal", "beast", "zombie","rat"]
-
-}
+  "nouns" => ["bear", "alien", "animal", "beast", "zombie","rat"],
+  "end" => ["the"],
+  "error" => ["them","idiots"]
+ }
   def self.scan(words)
     array = words.split
     newar = []

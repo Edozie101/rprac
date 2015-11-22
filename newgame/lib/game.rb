@@ -1,8 +1,55 @@
 require "./lib/game/lexicon.rb"
 
+def computerWrite(words)
+  @words = words.split
+  @words.each do |letter|
+    print letter + " "
+    sleep(0.09)
+  end
+end
+
+def competerSpeak(words)
+  system("say", words)
+  computerWrite(words)
+end
+
 class Player
-  attr_accessor :name,:strength,:perception,:endurance,:charisma,:intelligence, :agility, :luck
+  attr_accessor :name,:strength,:perception,:endurance,:charisma,:intelligence, :agility, :luck, :level,:experience
   def initialize(name)
+    @name = name
+    @strength = 0
+    @perception = 0
+    @endurance = 0
+    @charisma = 0
+    @intelligence = 0
+    @agility = 0
+    @luck = 0
+    @level = 1
+    @experience = 0
+  end
+
+
+
+  def add_exp(monster)
+    @experience += monster.exp
+
+  end
+
+  def update
+    if @experience % (@level * 200 ) == 0
+       @level += 1
+       self.levelup
+       return @level
+    end
+
+
+  end
+
+
+
+  def levelup
+    competerSpeak ("Congratulations you just leveled up ")
+
   end
 end
 
@@ -22,9 +69,6 @@ class Scene
     end
   end
 
-  def competerSpeak(words)
-    system("say", words)
-  end
 
   def intro
     puts "Enter your name.."
@@ -52,7 +96,7 @@ class Wilderness < Scene
   end
 
   def enter
-    puts @description
+    puts self.description
 
     puts "what do you do?"
 
@@ -130,8 +174,11 @@ class NuclearShelter < Scene
     response = gets.chomp
     if response == "north"
       return "TheInstitute"
-    else
+    elsif response == "south"
+      return "Wilderness"
 
+    elsif response == "east"
+      return "BunkerHill"
     end
 
   end
