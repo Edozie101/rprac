@@ -6,6 +6,10 @@ class TestPlayerMonster < Test::Unit::TestCase
   def test_player_exists?
     defined? Player == "constant"
   end
+  def test_moster_exists?
+    defined? Monster == "constant"
+
+  end
   def test_player_levelsup?
     me = Player.new("Edozie")
     me.experience += 200
