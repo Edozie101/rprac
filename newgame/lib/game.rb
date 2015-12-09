@@ -14,10 +14,10 @@ def competerSpeak(words)
 end
 
 class Npc
-  attr_accessor :type, :name, :experience_value, :damage, :ranged
+  attr_accessor :type, :name, :experience_value, :damage, :ranged,:health
   @@type_values = {
-    "rat" => ["rat",33, 5, 0],
-    "human_marauder" => ["human_marauder", 50,10,5]
+    "rat" => ["rat",33, 5, 0,20,rand(10)],
+    "human_marauder" => ["human_marauder", 50,10,5,40,rand(10)]
 
   }
   def initialize(type)
@@ -26,6 +26,9 @@ class Npc
       @experience_value = @@type_values[type][1]
       @damage = @@type_values[type][2]
       @ranged = @@type_values[type][3]
+      @health = @@type_values[type][4]
+      @level = @@type_values[type][5]
+
     end
   end
 end
@@ -49,23 +52,67 @@ class Monster < Npc
 
 end
 
+
+class Battle
+
+  def initialize(monster,player)
+    @monster = monster
+    @player = player
+  end
+
+  def engage
+
+    until @monster.health < 0 || @player.health < 0
+
+      @monster.attack(@player)
+      puts "do you want to attack right now, or run ?  "
+      input = gets.chomp
+
+      if input == "attack"
+        @player.attack(monster)
+      elsif input == "run"
+        runchance = player.luck * rand(10)
+
+        if runchance > 4
+          puts "You got away!"
+          break
+        elsif runchance <= 4
+          puts "The #{@monster.name} caught up to you! The fight continues!"
+        end
+
+
+      end
+
+    end
+    if @player.health != 0
+      @player.add_exp(@monster)
+    end
+  end
+
+end
+
 class Player
-  attr_accessor :name,:health,:strength,:perception,:endurance,:charisma,:intelligence, :agility, :luck, :level,:experience
+  attr_accessor :name,:health,:strength,:perception,:endurance,:charisma,:intelligence, :agility, :luck, :level,:experience,:weapon
   def initialize(name)
     @name = name
-    @strength = 0
-    @perception = 0
-    @endurance = 0
-    @charisma = 0
-    @intelligence = 0
-    @agility = 0
-    @luck = 0
+    @strength = 1
+    @perception = 1
+    @endurance = 1
+    @charisma = 1
+    @intelligence = 1
+    @agility = 1
+    @luck = 1
     @level = 1
     @experience = 0
     @health  = 100
+    @weapon = ["iron_sword",50,0]
+
   end
 
+  def attack(monster)
+    monster.health -= @weapon[1] * @strength
 
+  end
 
   def add_exp(monster)
     @experience += monster.exp
@@ -73,7 +120,7 @@ class Player
   end
 
   def update
-    if @experience % (@level * 200 ) == 0
+    if @experience.to_f / (@level * 200 ) == 1
        @level += 1
        self.levelup
        return @level
@@ -270,7 +317,23 @@ class Map
   end
 end
 class Engine
+   def initialize(map)
+     @@currentscene = map.openingscene
+     @@lastscene = map.next_scene("Finished")
+     @map = map
+   end
 
 
+   def play
+     while @@currentscene != @@lastscene
+       @@currentscene = @@currentscene.enter
+
+       @@currentscene = @map.next_scene(@@currentscene)
+
+     end
+
+     @@currentscene.enter
+
+   end
 
 end

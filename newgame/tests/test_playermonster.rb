@@ -22,7 +22,7 @@ class TestPlayerMonster < Test::Unit::TestCase
   def test_monster_damage
     hum = Monster.new("human_marauder")
     assert_equal(hum.damage,10)
-    puts "Damage A OK"
+    puts "Damage A OK \n"
   end
   def test_player_taking_damage
     me = Player.new("Edozie")
@@ -30,6 +30,13 @@ class TestPlayerMonster < Test::Unit::TestCase
     rat.attack(me)
     assert_equal(me.health , 95)
   end
+
+  def test_battle_sequence
+    me = Player.new("Edozie")
+    human = Monster.new("human_marauder")
+    Battle.new(human,me)
+  end
+
   #add battle test , experience absorbtion ,
 
 end
