@@ -33,8 +33,12 @@ class TestPlayerMonster < Test::Unit::TestCase
 
   def test_battle_sequence
     me = Player.new("Edozie")
+    puts "Pre battle health is #{me.health} and pre  battle experience is #{me.experience}"
+
     human = Monster.new("human_marauder")
-    Battle.new(human,me)
+    battle = Battle.new(human,me)
+    battle.engage
+    puts "Post battle health is #{me.health} and post  battle experience is #{me.experience}"
   end
 
   #add battle test , experience absorbtion ,

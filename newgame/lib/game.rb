@@ -1,10 +1,10 @@
 require "./lib/game/lexicon.rb"
 
 def computerWrite(words)
-  @words = words.split
+  @words = words.chars
   @words.each do |letter|
-    print letter + " "
-    sleep(0.09)
+    print letter
+    sleep(0.06)
   end
 end
 
@@ -23,6 +23,7 @@ class Npc
   def initialize(type)
     @type = type
     if @@type_values.has_key?(type)
+      @name = @@type_values[type][0]
       @experience_value = @@type_values[type][1]
       @damage = @@type_values[type][2]
       @ranged = @@type_values[type][3]
@@ -42,12 +43,12 @@ class Monster < Npc
 
 
   def attack(player)
-    puts "Starting attack"
+    computerWrite "#{@name} just attacked you for #{@damage} damage"
     puts player
-
-    puts "#{player.health}"
-
     player.health -= @damage
+    computerWrite "You have #{player.health} health left !"
+
+
   end
 
 end
@@ -63,21 +64,27 @@ class Battle
   def engage
 
     until @monster.health < 0 || @player.health < 0
+      puts "*" * 40
+      puts "*" * 40
+
+
+
 
       @monster.attack(@player)
-      puts "do you want to attack right now, or run ?  "
+      computerWrite "do you want to attack right now, or run ? \n "
       input = gets.chomp
 
-      if input == "attack"
-        @player.attack(monster)
-      elsif input == "run"
-        runchance = player.luck * rand(10)
+      if input.include?("attack")
+        @player.attack(@monster)
+
+      elsif input.include?("run")
+        runchance = @player.luck * rand(10)
 
         if runchance > 4
-          puts "You got away!"
+          computerWrite "You got away!"
           break
         elsif runchance <= 4
-          puts "The #{@monster.name} caught up to you! The fight continues!"
+          computerWrite "The #{@monster.name} caught up to you! The fight continues!"
         end
 
 
@@ -86,6 +93,7 @@ class Battle
     end
     if @player.health != 0
       @player.add_exp(@monster)
+      @player.update
     end
   end
 
@@ -110,12 +118,15 @@ class Player
   end
 
   def attack(monster)
-    monster.health -= @weapon[1] * @strength
+    damage =  @weapon[1] * @strength
+    monster.health -= damage
+    computerWrite "You just attacked #{monster.name} for #{damage} damage"
+    computerWrite "#{monster.name} has #{monster.health} health left!"
 
   end
 
   def add_exp(monster)
-    @experience += monster.exp
+    @experience += monster.experience_value
 
   end
 
@@ -139,7 +150,7 @@ end
 
 
 class Scene
-  attr_reader :name,:description,:paths,:intro
+  attr_accessor :name,:description,:paths,:intro
   def initialize(name,description=nil)
     # @name = name
     # @descritpion = descritpion
@@ -257,6 +268,7 @@ class NuclearShelter < Scene
     puts ">///>"
     response = gets.chomp
     if response == "north"
+
       return "TheInstitute"
     elsif response == "south"
       return "Wilderness"

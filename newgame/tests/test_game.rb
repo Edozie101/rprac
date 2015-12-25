@@ -66,5 +66,10 @@ class TestGame < Test::Unit::TestCase
 
   end
 
+  def test_game_engine
+  
+
+  end
+
 
 end
